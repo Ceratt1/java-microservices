@@ -1,6 +1,7 @@
 package com.ceratti.order_service.models;
 
 import java.sql.Date;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID uuid;
 
-    private Date createdAt;
+    private OffsetDateTime createdAt;
 }

@@ -14,9 +14,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Order extends BaseEntity {
-	
 
-    private String orderNumber;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderLineItems> orderLines;
