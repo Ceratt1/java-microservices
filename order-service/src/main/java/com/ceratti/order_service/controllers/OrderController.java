@@ -1,5 +1,8 @@
 package com.ceratti.order_service.controllers;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ceratti.order_service.dtos.OrderRequest;
 import com.ceratti.order_service.dtos.OrderResponse;
 import com.ceratti.order_service.models.Order;
+import com.ceratti.order_service.models.OrderLineItems;
 import com.ceratti.order_service.services.IOrderService;
 
 import jakarta.validation.Valid;
@@ -33,10 +37,18 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public OrderResponse createOrder(@RequestBody @Valid OrderRequest orderRequest) {
         Order order = modelMapper.map(orderRequest, Order.class);
+        List<OrderLineItems> lineItems = orderRequest.getOrderLines().stream()
+            .map(item -> modelMapper.map(item, OrderLineItems.class))
+            .toList();
+    
+        order.setOrderLines(lineItems);
+    
         order = orderService.createOrder(order);
-        OrderResponse orderResponse = modelMapper.map(order, OrderResponse.class);
-        return orderResponse;
 
+        OrderResponse orderResponse = modelMapper.map(order, OrderResponse.class);
+
+
+        return orderResponse;
     }
     
 }
