@@ -27,6 +27,24 @@ Ela utiliza o **RabbitMQ como broker de mensagens**, facilitando a comunicação
 
 ---
 
+## 🔌 Inicialização
+
+Para iniciar o projeto, é necessário criar dois bancos de dados: um no MongoDB e outro no MySQL.
+
+### MongoDB
+
+- Acesse o MongoDB e execute o comando `use products` ou crie um novo banco de dados com o nome `products`.
+- Dentro do banco, execute o comando `db.createCollection("products")` para criar a coleção `products`.
+
+### MySQL
+
+- Acesse o MySQL e execute o comando `CREATE DATABASE order_db;` para criar o banco de dados `order_db`.
+
+Depois de criar os bancos de dados, você pode executar o projeto com o comando `mvn spring-boot:run` no diretório raiz do projeto.
+
+
+
+
 ## 📦 Funcionalidades (parcial)
 
 - ✅ Cadastro de produtos

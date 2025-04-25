@@ -40,14 +40,9 @@ public class OrderController {
         List<OrderLineItems> lineItems = orderRequest.getOrderLines().stream()
             .map(item -> modelMapper.map(item, OrderLineItems.class))
             .toList();
-    
         order.setOrderLines(lineItems);
-    
         order = orderService.createOrder(order);
-
         OrderResponse orderResponse = modelMapper.map(order, OrderResponse.class);
-
-
         return orderResponse;
     }
     

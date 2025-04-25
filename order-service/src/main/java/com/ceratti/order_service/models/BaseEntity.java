@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,5 +22,7 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
 
+    
+    @CreationTimestamp
     private OffsetDateTime createdAt;
 }
