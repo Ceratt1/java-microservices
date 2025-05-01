@@ -24,4 +24,5 @@ public abstract class BaseEntity {
     
     @CreationTimestamp
     private OffsetDateTime createdAt;
+    
 }

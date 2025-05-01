@@ -1,5 +1,6 @@
 package com.ceratti.inventory_service.repositories;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,5 @@ import com.ceratti.inventory_service.models.Inventory;
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, UUID> {
     
-    Inventory findBySkuCode(String skuCode);
+    Optional<Inventory> findBySkuCode(String skuCode);
 }
