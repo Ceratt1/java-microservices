@@ -10,4 +10,5 @@ import com.ceratti.inventory_service.models.Inventory;
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, UUID> {
     
+    Inventory findBySkuCode(String skuCode);
 }
