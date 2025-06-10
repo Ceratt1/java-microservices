@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceratti.inventory_service.exceptions.DomainException;
 import com.ceratti.inventory_service.exceptions.IventoryNotFoundException;
 import com.ceratti.inventory_service.models.Inventory;
 import com.ceratti.inventory_service.repositories.InventoryRepository;
