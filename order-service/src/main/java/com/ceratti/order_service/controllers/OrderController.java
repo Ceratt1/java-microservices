@@ -19,6 +19,9 @@ import com.ceratti.order_service.models.OrderLineItems;
 import com.ceratti.order_service.services.IOrderService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/orders")
@@ -47,6 +50,14 @@ public class OrderController {
     }
 
 
+    @GetMapping("/getAll")
+    public OrderResponse getMethodName(@RequestParam int page, 
+                                       @RequestParam int pageSize) {
+        
+                                        return null;
+    }
     
+
+
     
 }
