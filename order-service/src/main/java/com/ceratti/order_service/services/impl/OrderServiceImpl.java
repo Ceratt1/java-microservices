@@ -61,7 +61,6 @@ public class OrderServiceImpl implements IOrderService {
         
         order.getOrderLines().stream()
             .forEach(item -> {
-                
                 try {
                         boolean isAvailable = webClient.get()
                         .uri(INVENTORY_SERVICE_URL + item.getSkuCode())
@@ -79,8 +78,8 @@ public class OrderServiceImpl implements IOrderService {
             });
             
 
-            order = orderRepository.save(order);
-            return order;
+        return orderRepository.save(order);
+             
 
     }
 

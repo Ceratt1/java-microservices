@@ -12,6 +12,6 @@ public class OrderResponse {
     
     private UUID uuid;
 
-    private List<OrderItemResponse> items;
+    private List<OrderItemResponse> orderLines;
 
 }
