@@ -1,6 +1,5 @@
 package com.ceratti.order_service.models;
 
-import java.sql.Date;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
